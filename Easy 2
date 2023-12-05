@@ -11,17 +11,26 @@ class TreeNode:
        self.left = left
        self.right = right
 
-def sortedArrayToTree(nums):
-   if not nums:
-     return None
-   mid = len(nums) // 2
-   root = TreeNode(nums[mid])
-   root.left = sortedArrayToTree(nums[:mid])
-   root.right = sortedArrayToTree(nums[mid + 1:])
-   return root
+def sortedArrayToBST(nums):
+    if not nums:
+        return None
 
-nums = [-10, -3, 0, 5, 9]
-root = sortedArrayToTree(nums)
+    mid = len(nums) // 2
+    root = TreeNode(nums[mid])
+    root.left = sortedArrayToBST(nums[:mid])
+    root.right = sortedArrayToBST(nums[mid + 1:])
+
+    return root
+
+def printTree(root):
+    if root:
+        print(root.val, end=' ')
+        printTree(root.left)
+        printTree(root.right)
+
+nums = input()
+result_tree = sortedArrayToBST(nums)
+printTree(result_tree)
 
 
 OUTPUT:
