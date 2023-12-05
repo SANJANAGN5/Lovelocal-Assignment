@@ -1,0 +1,38 @@
+
+Easy 1
+
+Given a string s consisting of words and spaces, return the length of the last word in the string.
+A word is a maximal 
+substring consisting of non-space characters only.
+
+CODE:
+
+def len_of_lastword(string):
+  words = string.split()
+  if not words:
+     return 0
+  return  len(words[-1])
+
+if __name__ == "__main__':
+  string = "Hello World"
+  result = len_of_lastword(string)
+  print(result)
+
+output:
+
+For Example 1:
+Input : "Hello World"
+output : 5
+The last word in the string is "World" which is of length 5. In the above code , split() method is used to split the string into words and then returning the len of the last word from the list.
+
+For Example 2:
+Input: "  fly me  to  the moon"
+output: 4
+
+For Example 3:
+Input: "luffy is still joyboy"
+output: 6
+
+
+
+    
