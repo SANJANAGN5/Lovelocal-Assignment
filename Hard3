@@ -35,6 +35,7 @@ After:Calculates the value of digits after the current digit place.
 Moves to the next digit position by multiplying multiplier by 10.After the loop completes, the function returns the final count.
 
 Algorithm: Optimized Algorithm
+
 This algorithm is used to count the number of occurrences of the digit '1' in the representation of a positive integer n.
 1.It uses a while loop to iterate through each digit place in the number.
 2.Inside the loop, it calculates before,current and after.
