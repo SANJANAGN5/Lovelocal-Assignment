@@ -1,5 +1,4 @@
 Easy 1
-
 Given a string s consisting of words and spaces, return the length of the last word in the string.
 A word is a maximal 
 substring consisting of non-space characters only.
@@ -17,8 +16,23 @@ if __name__ == "__main__':
   result = len_of_lastword(string)
   print(result)
 
-OUTPUT:
+Explanation:
+First line defines a function named 'len_of_lastword' that takes a parameter string.
+split() method to split the input string into a list of words.which separates the words by whitespace characters.
+'if' conditional statement is used to check if the list of word(words) is empty.
+if the input string has no 'words'.Then the function returns 0,Because there is no lastword to determine the length.
+'words[-1]' accesses  the last word in the string by its index [-1] and len() function is used to determine the last word's length.
 
+Algorithm:
+The algorithm used is straightforward with no complexity.
+1.Splitting the String into words
+2.Checking the empty string 
+3.Finding the length of the last word in string by indexing.
+
+Time Complexity of this algorithm is based on split() method which is O(n)Linear time complexity where 'n' is length of word.
+list indexing and length calculation have constant time complexity.
+
+OUTPUT:
 For Example 1:
 Input : "Hello World"
 output : 5
