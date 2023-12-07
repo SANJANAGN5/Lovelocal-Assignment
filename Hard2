@@ -16,6 +16,25 @@ if __name__ == "__main__":
   result = shortest_palindrome(s)
   print(result)
 
+Explanation:
+Defining a function named 'shortest_palindrome' that takes a string 's' as parameter.
+creating a reversed version of the input string 's' and assigns it to the variable 'rev_s'.
+for loop used to iterate over the indices i from 0 to len(s).
+Inside the loop, checking if the substring of rev_s starting from index i that matches the prefix of 's'or not.
+startswith() method is used for this comparison.
+If a string matches, the function returns a palindrome constructed by taking the reversed suffix of s
+and combining it with the original string s.
+The string "aacecaaa" is passed to the shortest_palindrome function, and the result is printed.
+
+Algorithm:
+The approach of this algorithm is to iterate through the reversed string and checking for the 
+longest suffix of the reversed string to  matches the prefix of the original string.
+1.Reverse the input string (rev_s).
+2.Iterate through the reversed string (rev_s) and check if the original string (s) starts with a suffix of the reversed string.
+3.When a match is found, concatenate the remaining characters from the reversed string to the original string.
+
+Time Complexity is  O(n^2), where n is the length of the input string.
+
 OUTPUT:
 For Example 1:
 Input: s = "aacecaaa"
