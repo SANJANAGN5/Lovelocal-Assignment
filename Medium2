@@ -6,7 +6,6 @@ CODE:
 def majority_elements(nums):
   if not nums:
       return []
-
   count1, count2, candidate1, candidate2 = 0, 0, None, None
 
   for num in nums:
@@ -21,20 +20,18 @@ def majority_elements(nums):
       else:
          count1 -= 1
          count2 -= 1
-
   count1, count2 = 0, 0
   for num in nums:
       if num == candidate1:
          count1 += 1
       elif num == candidate2:
          count2 += 1
-
   result = []
+
   if count1 > len(nums) // 3:
       result.append(candidate1)
   if count2 > len(nums) // 3:
       result.append(candidate2)
-
   return result
 
 if __name__ == "__main__":
@@ -42,8 +39,32 @@ if __name__ == "__main__":
   result = majority_elements(nums)
   print(result)
 
-OUTPUT:
+Explanation:
+Defining the function 'majority_elements' with parameter 'nums'.
+initializing four variables count1 and count2 represent the counts of two potential majority candidates.candidates are set to None.
+for loop over each element (num) in the input array nums.
+'if' checks if the candidate1 has been set (is not None) and if the current element num is equal to candidate1. 
+If true, it increments the count of candidate1.
+'elif' checks if candidate2 has been set (is not None) and if the current element num is equal to candidate2.
+If true, it increments the count of candidate2.
+If the count of candidate1 is 0, candidate1 is set to the num, and count1 is set to 1.
+If the count of candidate2 is 0, candidate2 is set to the num, and count2 is set to 1.
+If none of the conditions are true,num is different from both candidates adn we decrement the counts of both candidates.
+After the first , we reset the counts to 0 for the second pass and Start another loop for the second pass.
+Then we count the occurrences of both candidates and check if the counts are greater than ⌊ n/3 ⌋, we include them in the result list.
+In Final , function returns the list of elements that occur more than  n/3  times in the input array.
 
+Algorithm: Boyer-Moore Majority Vote algorithm.
+
+This algorithm is used to find the majority element in a sequence and to cancel different elements and 
+find the element that occurs more than half of the time.
+1.Iterate through the array, updating the candidates and counts based on the current element.
+2.After the first pass, reset the  counters and count occurrences of the candidates.
+3.Check if the counts of the candidates are greater than ⌊ n/3 ⌋ and include them in the result.
+
+The algorithm has a linear time complexity of O(n).based on it iterates through the input array twice.
+
+OUTPUT:
 For Example 1:
 Input: nums = [3,2,3]
 Output: [3]
